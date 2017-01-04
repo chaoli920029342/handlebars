@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<title>详情-内部分享</title>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/handlebars.min.js"></script>
+<script type="text/javascript" src="js/detail_json.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<style type="text/css">
+.header,.header .inner{background-color:#fff;}
+body,.inner{background-color:#4489ca;}
+.detail-map .index-map-join .left{display:none;}
+.index-map-list li{height:auto;}
+.index-map-fullSlide{height:auto;}
+@media screen and (max-width:640px){
+	
+	.header{display:none;}
+	.index-map{margin-top:0;}
+	.detail-map .index-map-join{padding:10px 0;position:fixed;bottom:0;left:0;width:100%;border-top:1px solid #ddd;background-color:#fff;}
+	.detail-map .index-map-join a.index-map-joinbtn{float:right;margin-right:5%;width:150px;}
+	.detail-map .index-map-join .left{float:left;margin-left:5%;font-size:16px;line-height:40px;color:#333;display:block;}
+}
+
+</style>
+</head>
+<body>
+<div class="list-main detail-main">
+	<div class="header">
+		<div class="inner">
+			<div class="header-l trs_animated">
+				<div class="header-logo inline">
+					<div class="header-logo-pic"></div>
+				</div>
+				<div class="header-title inline">技术分享平台</div>
+				<div class="header-subtitle inline"><span>共享</span><span>创新</span><span>体验</span></div>
+			</div>
+			<div class="header-m  inline trs_animated">详情</div>
+			<div class="header-r trs_animated">
+				<div class="header-search-bg inline"><input type="text" class="header-search-inp" placeholder="请输入您想搜索的内容" /></div>
+				<div class="header-search-btn inline"><a href="#nogo">搜索</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="index-map detail-map">
+		<div class="inner">
+			 <div class="index-map-fullSlide">
+			    <div class="index-map1 v-show" >
+			    	<div class="v-cont">
+				        <ul class="index-map-list">
+				                
+				        </ul>
+			        </div>
+			       
+			    </div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<script id="banner_template" type="text/x-handlebars-template">
+{{#each banner_info}}
+
+<li style="background:url(images/bannerbg3.jpg)">
+	<div class="index-map-title">{{title}}</div>
+	<div class="index-map-subtitle"><p>{{subtitle}}</p></div>
+	<div class="index-map-sharer">分享者：{{name}}</div>
+	<div class="index-map-lineinfo"> 
+		<div class="inline tleft">时间：{{time}}</div>
+		<div class="inline tright">地点：{{place}}</div>
+		<div class="inline tright">人数：{{num}}人</div>
+	</div>
+	<div class="index-map-join">
+		<div class="left">剩余名额：{{left}}</div>
+		<a href="{{url}}" class="index-map-joinbtn">立即报名</a>
+	</div>
+</li>
+
+{{/each}}
+
+
+</script>
+
+
+</body>
+</html>

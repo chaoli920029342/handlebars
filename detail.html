@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>详情-内部分享</title>
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/handlebars.min.js"></script>
+<script type="text/javascript" src="js/json.js"></script>
+<script type="text/javascript" src="js/detail_json.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("input,textarea").placeholder();
+	//$("input").focus();
+})
+</script>
+<style type="text/css">
+.header .header-l{display:none;}
+.header .header-r{display:none;}
+.index-map-list li{height:auto;}
+.detail-map .index-map-join{display:none;}
+.h15{display:none;}
+
+@media screen and (max-width:640px){
+	/*body,.inner{background-color:#4489ca;}*/
+	.header{display:none;}
+	.footer-wapper{display:none;}
+	.index-map{margin-top:0;}
+	
+	.detail-cont .detail-cont-nav .r .inline span{padding-right:15px;font-size:12px;}
+	.detail-cont .detail-cont-info .detail-model{width:100%;height:auto;}
+	.detail-cont .detail-cont-info .detail-model img{width:100%;height:auto;}
+	.detail-cont .detail-cont-info{padding-top:0;}
+	.detail-cont .detail-cont-list{padding-top:0;}
+	.detail-cont .detail-list-item .r-item.tr-item{width:75%;text-align:left;}
+	.detail-cont .detail-list-item .r-item textarea{width:100%;font-size:16px;line-height:1.5}
+	.detail-cont .detail-list-item .r-item{width:75%;text-align:left;}
+	.wid105{width:80px;}
+	.detail-cont .detail-list-item .r-item .tip span{width:50px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:inline-block;}
+	.detail-cont .detail-list-item .l-item{width:73px;}
+	.detail-cont .detail-cont-list dt{padding-left:0;text-align:left;text-indent:10px;}
+	.detail-cont .detail-cont-list dt i{display:none;}
+	.detail-cont .detail-cont-list dt span{padding-left:0;}
+	.detail-cont .detail-cont-nav .l-tab{width:auto;text-align:left;text-indent:10px;}
+	.detail-cont-navnum{margin-top:4px;}
+	.detail-cont{padding-top:15px;}
+	.h15{height:15px;width:100%;background-color:#eee;display:block;}
+}
+@media screen and (max-width:320px){
+	.detail-cont .detail-list-item .r-item{width:70%;text-align:left;}
+	.detail-cont .detail-list-item .r-item.tr-item{width:70%;text-align:left;}
+	.detail-cont .detail-list-item .r-item .tip span{width:48px;font-size:12px;}
+	.detail-cont .detail-cont-nav .r .inline span{font-size:10px;padding-right:10px;}
+	.wid105{width:70px;}
+}
+</style>
+</head>
+<body>
+<div class="list-main detail-main">
+	<div class="header">
+		<div class="inner">
+			<div class="header-l trs_animated">
+				<div class="header-logo inline">
+					<div class="header-logo-pic"></div>
+				</div>
+				<div class="header-title inline">技术分享平台</div>
+				<div class="header-subtitle inline"><span>共享</span><span>创新</span><span>体验</span></div>
+			</div>
+			<div class="header-m  inline trs_animated">内容标题</div>
+			<div class="header-r trs_animated">
+				<div class="header-search-bg inline"><input type="text" class="header-search-inp" placeholder="请输入您想搜索的内容" /></div>
+				<div class="header-search-btn inline"><a href="#nogo">搜索</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="nav">
+		<div class="inner">
+			<div class="nav-data nav-sel">
+				<a href="#nogo" class="nav-item ">云端大数据<i class="inline"></i></a>
+				<div class="nav-data-list" >
+					<div class="nav-data-listin">
+					</div>
+				</div>
+			</div>
+			<div class="nav-items">
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item1 nav-sel">首页</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类1</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类2</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类3</a></div>
+				<div class="inline nav-sel">
+					<a href="#nogo" class="nav-item nav-item2">分类4<i class="inline arrow"></i></a>
+					<div class="nav-data-list">
+						<div class="nav-data-listin">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="index-map detail-map">
+		<div class="inner">
+			 <div class="index-map-fullSlide">
+			    <div class="index-map1 v-show" >
+			    	<div class="v-cont">
+				        <ul class="index-map-list">
+				                
+				        </ul>
+			        </div>
+			       
+			    </div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="detail-cont">
+		<div class="detail-cont-nav">
+			<div class="inner">
+				<div class="l">
+					<div class="l-tab">正文内容</div>
+				</div>
+				<div class="r detail-cont-navnum">
+					
+					<div class="inline"><i class="i3 inline"></i><span>下载文档</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="detail-cont-info">
+			<div class="inner">
+				<div class="detail-model">
+					<img src="images/model.jpg"  />
+				</div>
+				<div class="h15"></div>
+				<dl class="detail-cont-list">
+					<dt><i class="inline"></i><span>评论内容</span></dt>
+					<dd>
+						<div class="detail-list-item">
+							<div class="l-item">
+								<div class="l-item">
+								<div class="avat"></div>
+								<p>我的评论</p>
+							</div>
+							</div>
+							<div class="r-item tr-item">
+								<textarea ></textarea>
+								<div class="index-map-join inline wid50 verbottom subcomment">
+	                			<a href="#nogo" class="index-map-joinbtn">提交评论</a>
+	                		</div>
+							</div>
+						</div>
+					</dd>
+					
+				</dl>
+			</div>
+		</div>
+		
+	</div>
+	<div class="footer-wapper">
+		<div class="footer">
+			<div class="inner">
+				<div class="l">
+					<div class="header-logo inline">
+						<div class="header-logo-pic"></div>
+					</div>
+					<div class="footer-col1 inline">
+						<h5>技术分享平台</h5>
+						<p>分享<span>创新</span>体验</p>
+					</div>
+					<div class="footer-col2 inline">
+						<div class="footer-line"></div>
+					</div>
+					<div class="footer-col3 inline">
+						益盟技术部产品开发组技术支持<br />
+						反馈电话：6195-7492<br />
+						电子信箱：emtechshare@emoney.cn<br />
+						公众号：emtechshare<br />
+					</div>
+				</div>
+				<div class="r">
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper">
+							<div class="footer-code"></div>
+							<p>凹凸理财公众号</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="banner_template" type="text/x-handlebars-template">
+{{#each banner_info}}
+
+<li style="background:url(images/bannerbg3.jpg)">
+	<div class="index-map-title">{{title}}</div>
+	<div class="index-map-subtitle"><p>{{subtitle}}</p></div>
+	<div class="index-map-sharer">分享者：{{name}}</div>
+	<div class="index-map-lineinfo"> 
+		<div class="inline tleft">时间：{{time}}</div>
+		<div class="inline tright">地点：{{place}}</div>
+		<div class="inline tright">人数：{{num}}人</div>
+	</div>
+</li>
+
+{{/each}}
+
+
+</script>
+
+<script id="banner_num_template" type="text/x-handlebars-template">
+{{#each banner_info}}
+
+	<div class="inline"><i class="i1 inline"></i><span>{{download}}次</span></div>
+	<div class="inline"><i class="i2 inline"></i><span>{{zan}}赞</span></div>
+
+{{/each}}
+</script>
+
+<script  id="comment_template" type="text/x-handlebars-template">
+{{#each comment}}
+	<dd>
+		<div class="detail-list-item">
+			<div class="l-item">
+				<div class="avat"></div>
+				<p>{{name}}</p>
+			</div>
+			<div class="r-item">
+				<div class="txt">{{content}}</div>
+				<div class="tip">
+					<div class="inline wid105"><i class="i1 inline"></i><span>{{like}}</span></div>
+					<div class="inline wid105"><i class="i2 inline"></i><span>{{agree}}</span></div>
+					<div class="inline wid105"><i class="i3 inline"></i><span>{{disagree}}</span></div>
+				</div>
+			</div>
+		</div>
+	</dd>
+
+{{/each}}
+
+</script>
+
+<script id="nav_template" type="text/x-handlebars-template">
+{{#each nav_list}}
+
+<a href="{{nav_list_url}}" >{{nav_list_name}}</a>
+
+{{/each}}
+
+
+</script>
+</body>
+</html>

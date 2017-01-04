@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>首页-内部分享</title>
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/handlebars.min.js"></script>
+<script type="text/javascript" src="js/json.js"></script>
+<script type="text/javascript" src="js/index_json.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/commonJSpadding.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("input,textarea").placeholder();
+	//$("input").focus();
+	var wid=$(window).width();
+	if(wid>640){
+
+	}else{
+		$(".index-review-item").addClass("index-review-show");
+		/*$("body").click(function(){
+			$(".search-pannel-sbg").hide();
+		})*/
+		$(".search-pannel-sbg").click(function(){
+			$(".search-pannel").hide();
+			if($(".header-logo-menu").hasClass("menu_show")){
+				$(".header-logo-menu").removeClass("menu_show").addClass("menu_hide");
+			}
+			$(".search-pannel").removeClass("on");
+			
+		})
+		$(".header-search-btn a").click(function(){	
+			$(".search-pannel").toggleClass("on");
+		});
+		$(".header-logo-pic").click(function(){
+			$(".search-pannel").show();
+			if($(".header-logo-menu").hasClass("menu_show")){
+				$(".header-logo-menu").removeClass("menu_show").addClass("menu_hide");
+				$(".search-pannel").hide();
+			}else{
+				$(".header-logo-menu").addClass("menu_show").removeClass("menu_hide");
+			}
+			
+		});
+		$(".nav-data-listin a").click(function(){
+			$(".header-logo-menu").removeClass("menu_show").addClass("menu_hide");
+		})
+
+	}
+})
+</script>
+<style type="text/css">
+.inno-exper{display:block;}
+@media screen and (max-width:640px){
+	.index-map-join{display:none;}
+	.index-share-cont{padding-top:15px;}
+	.index-share-cont .index-share-info .l{display:none;}
+	.index-share-cont .index-share-info .r{width:100%;height:auto;}
+	.index-share-cont .index-share-info .r ul{padding:0 10px;}
+	.index-share-cont .column-subtitle{text-align:left;}
+	.index-share-cont .share-column{padding:10px 0;border-bottom:1px solid #ddd;}
+	.index-share-cont .share-column:last-child{border-bottom:0;}
+	.index-share-cont .share-column .column-title h3{width:70%;text-align:left;}
+	.index-hot-rec ul{padding:0 10px;}
+	.index-hot-rec li{margin-bottom:10px;}
+	.index-hot-rec li:first-child{display:none;}
+	.index-hot-rec li:last-child{display:none;}
+	.index-hot-rec li{padding-right:0;width:50%;}
+	.index-hot-rec li .rec-list .show-txt{height:auto;width:100%;}
+	.index-hot-rec li .rec-list .show-txt p{display:block;}
+	.index-hot-rec li .rec-l2,.index-hot-rec li .rec-l3,.index-hot-rec li .rec-l4,.index-hot-rec li .rec-l5{width:95%;margin:0 auto;background-size:100% 100%;}
+	.index-review .index-review-list{height:auto;border-top:0;border-left:0;border-right:0;}
+	.index-review .index-review-item .review-inner .l-pic5{float:left;}
+	.index-review .index-review-item{width:100%;}
+	.index-review .index-review-show{width:100%;}
+	.index-review .index-review-list li{border-right:0;border-bottom:1px solid #ddd;text-align:left;}
+	.index-review .index-review-show .review-inner{overflow:hidden;}
+	.index-review .index-review-item .r-info,.index-review .index-review-show .review-inner .r-info{width:70%;text-align:left;left:160px;}
+	.index-review .index-review-item .r-info-subtitle p,.index-review .index-review-show .review-inner .r-info-subtitle p{width:100%;text-align:left;}
+	.index-review .index-review-show .review-inner .r-info-title{width:auto;text-align:left;}
+	.index-review .index-review-show .review-inner .r-info-subtitle{width:auto;text-align:left;}
+	.index-review .index-review-show .review-inner .r-info-dl dd a{width:auto;}
+	.index-review .index-review-item .r-info{padding:0 0 0 23px;top:20px;text-align:left;left:160px;}
+	.index-review .index-review-item .review-inner .l-pic{float:left;}
+	.index-review .index-review-item .r-info-title{text-align:left;width:auto;}
+	.index-review .index-review-item .r-info-subtitle{text-align:left;width:auto;padding-top:7px;}
+	.index-review .index-review-item .r-info-dl{display:block;}
+	.index-rec .index-rec-list li{display:block;padding:10px 10px 0;}
+	.index-rec .index-rec-inner{width:100%;}
+	.index-rec .index-rec-list dl dd a{width:100%;text-align:left;}
+	.inno-exper{display:none;}
+	.index-line{width:90%;margin-bottom:15px;}
+	.quick-enter a.quick-enter-link{text-align:center;}
+}
+</style>
+</head>
+<body>
+<div class="search-pannel-sbg"></div>
+<div class="index-main">
+	<div class="header">
+		<div class="inner">
+			<div class="header-l trs_animated">
+				<div class="header-logo inline">
+					<div class="header-logo-pic"></div>
+					<div class="header-logo-menu trs_animated">
+						<div class="nav-data-listin">
+						</div>
+					</div>
+					
+
+				</div>
+				<div class="header-title inline">技术分享平台</div>
+				<div class="header-subtitle inline"><span>共享</span><span>创新</span><span>体验</span></div>
+			</div>
+			<div class="header-m  inline trs_animated">技术分享平台</div>
+			<div class="header-r trs_animated">
+				<div class="header-search-bg inline"><input type="text" class="header-search-inp " placeholder="请输入您想搜索的内容" /></div>
+				<div class="header-search-btn inline"><a href="#nogo">搜索</a></div>
+			</div>
+			<div class="search-pannel trs_animated"><input placeholder="数据处理" /><div class="search-pannel-sbg"></div></div>
+		</div>
+		
+	</div>
+	<div class="nav">
+		<div class="inner">
+			<div class="nav-items">
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item1 nav-sel">首页</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类1</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类2</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类3</a></div>
+				<div class="inline nav-sel">
+					<a href="#nogo" class="nav-item nav-item2">分类4<i class="inline arrow"></i></a>
+					<div class="nav-data-list">
+						<div class="nav-data-listin">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="index-map">
+		<div class="inner">
+			 <div class="index-map-fullSlide">
+			    <div class="index-map1 v-show" >
+			    	<div class="v-cont">
+				         <ul class="index-map-list" >
+				        	
+				        </ul>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="index-brief">
+		<div class="inner">
+			<ul class="index-brief-items">
+				<li class="inline">
+					<div class="index-brief-item">
+						<div class="pic inline">
+							<div class="i i1"></div>
+						</div>
+						<div class="txt inline">
+							<h2>数据统计分析</h2>
+							<p>挖掘更多隐藏的机会，把握产品更多的细节</p>
+						</div>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="index-brief-item">
+						<div class="pic inline">
+							<div class="i i2"></div>
+						</div>
+						<div class="txt inline">
+							<h2>扩展知识边界</h2>
+							<p>梳理知识脉络，筛选知识要点，让高手帮你阅读</p>
+						</div>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="index-brief-item">
+						<div class="pic inline">
+							<div class="i i3"></div>
+						</div>
+						<div class="txt inline">
+							<h2>开启新思维</h2>
+							<p>新角度，新思维，参与头脑风暴的创新空间</p>
+						</div>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="index-brief-item">
+						<div class="pic inline">
+							<div class="i i4"></div>
+						</div>
+						<div class="txt inline">
+							<h2>有效利用时间</h2>
+							<p>更有效的时间管理，更有节奏的时间利用</p>
+						</div>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="index-brief-item">
+						<div class="pic inline">
+							<div class="i i5"></div>
+						</div>
+						<div class="txt inline">
+							<h2>达成目标</h2>
+							<p>更快更精准地达成目标，提升自我的潜在效率</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="index-share-cont">
+		<div class="inner">
+			<div class="index-share-title">当前分享</div>
+			<div class="index-share-info">
+				<div class="l share-rec-detail">
+					
+				</div>
+				<div class="r">
+					<ul class="share-rec-list">
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="index-share-cont index-hot-rec">
+		<div class="inner">
+			<div class="index-share-title">热门主题推荐</div>
+			<div class="index-share-info">
+				<ul >
+					<li class="inline">
+						<div class="rec-list rec-l1 ">
+							<div class="mid-pic"></div>
+							<div class="txt">再小的Idea都值得分享</div>
+						</div>
+						
+					</li>
+				
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="index-share-cont index-review">
+		<div class="inner">
+			<div class="index-share-title">热门技术栈分享回顾</div>
+			<div class="index-share-info">
+				<ul class="index-review-list">
+					
+					
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="index-share-cont index-rec">
+		<div class="inner">
+			<ul class="index-rec-list">
+			</ul>
+		</div>
+		
+
+		</div>
+	</div>
+	<div class="index-share-cont inno-exper">
+		<div class="inner">
+			<div class="index-line"><div class="index-line-title">共享创新体验</div></div>
+			<ul>
+				<li class="inline">
+					<div class="inno-exper-items ">
+						<div class="inno-exper-item inno-exper-item1"></div>
+						<h3>跨界思维</h3>
+						<p>新的思维产生新的价值，新的思维产生新的价值，新的思维产生新的价值</p>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="inno-exper-items ">
+						<div class="inno-exper-item inno-exper-item2"></div>
+						<h3>共享心得</h3>
+						<p>新的思维产生新的价值，新的思维产生新的价值，新的思维产生新的价值</p>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="inno-exper-items ">
+						<div class="inno-exper-item inno-exper-item3"></div>
+						<h3>创新价值</h3>
+						<p>新的思维产生新的价值，新的思维产生新的价值，新的思维产生新的价值</p>
+					</div>
+				</li>
+				<li class="inline">
+					<div class="inno-exper-items ">
+						<div class="inno-exper-item inno-exper-item4"></div>
+						<h3>立足体验</h3>
+						<p>新的思维产生新的价值，新的思维产生新的价值，新的思维产生新的价值</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="index-share-cont quick-enter">
+		<div class="inner">
+			<div class="index-line"><div class="index-line-title fsize26">内部系统快速入口</div></div>
+			<div class="index-share-cont">
+				<a href="#nogo" class="quick-enter-link">内部导航</a>
+				<a href="#nogo" class="quick-enter-link">OA内部</a>
+				<a href="#nogo" class="quick-enter-link">禅道任务</a>
+				<a href="#nogo" class="quick-enter-link">接口查询</a>
+				<a href="#nogo" class="quick-enter-link">API查询</a>
+				<a href="#nogo" class="quick-enter-link">分享平台</a>
+				<a href="#nogo" class="quick-enter-link">监控平台</a>
+				<a href="#nogo" class="quick-enter-link">运维管理</a>
+				<a href="#nogo" class="quick-enter-link">API查询</a>
+				<a href="#nogo" class="quick-enter-link">分享平台</a>
+				<a href="#nogo" class="quick-enter-link">监控平台</a>
+				<a href="#nogo" class="quick-enter-link">运维管理</a>
+				
+			</div>
+		</div>
+	</div>
+	 <div class="footer-wapper">
+		<div class="footer">
+			<div class="inner">
+				<div class="l">
+					<div class="header-logo inline">
+						<div class="header-logo-pic"></div>
+					</div>
+					<div class="footer-col1 inline">
+						<h5>技术分享平台</h5>
+						<p>分享<span>创新</span>体验</p>
+					</div>
+					<div class="footer-col2 inline">
+						<div class="footer-line"></div>
+					</div>
+					<div class="footer-col3 inline">
+						益盟技术部产品开发组技术支持<br />
+						反馈电话：6195-7492<br />
+						电子信箱：emtechshare@emoney.cn<br />
+						公众号：emtechshare<br />
+					</div>
+				</div>
+				<div class="r">
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper">
+							<div class="footer-code"></div>
+							<p>凹凸理财公众号</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
+<script type="text/javascript">
+ $(function(){
+	 	 	//var tt=$(".index-map-wbtn").width()/2;
+	 	 	//var tt=-tt;
+	 		//console.log(tt);
+	 		//$(".index-map-wbtn").css({"margin-left":tt+"px"});
+
+	 		//var time = setInterval(function () {nextscroll(); }, 5000);
+	 		
+	 		//$(".index_banner_wbtn").mouseover(function(){
+	 		//	clearInterval(time);
+	 		//}).mouseout(function(){
+	 		//	time = setInterval(function () {
+        	//	nextscroll(); }, 3000);
+	 		//})
+
+			/*======next======*/
+			$(".next a").click(function(){ nextscroll() });
+			function nextscroll(){
+					var vcon = $(".v-cont ");
+					var offset = ($(".v-cont li").width())*-1;	
+					vcon.stop().animate({left:offset},"slow",function(){
+						 var firstItem = $(".v-cont ul li").first();
+						 vcon.find("ul").append(firstItem);
+						 $(this).css("left","0px");
+						 circle()	
+					});  
+			};
+
+			function circle(){
+					var currentItem = $(".v-cont ul li").first();
+					var currentIndex = currentItem.attr("index");
+					$(".circle li").removeClass("circle-cur");
+					$(".circle li").eq(currentIndex).addClass("circle-cur");
+			}
+
+			//setInterval(nextscroll,2000)
+			 
+			/*======prev======*/
+			$(".prev a").click(function(){
+					var vcon = $(".v-cont ");
+					var offset = ($(".v-cont li").width()*-1);
+					var lastItem = $(".v-cont ul li").last();
+					vcon.find("ul").prepend(lastItem);
+					vcon.css("left",offset);
+					vcon.animate({left:"0px"},"slow",function(){
+						 circle()
+					})
+			 });
+
+		   /*======btn====circle======*/
+			 var animateEnd = 1;
+			$(".circle li").mouseover(function(){
+				   if(animateEnd==0){return;}
+				   $(this).addClass("circle-cur").siblings().removeClass("circle-cur");
+					var nextindex = $(this).index();
+					var currentindex = $(".v-cont li").first().attr("index");
+					var curr = $(".v-cont li").first().clone();
+					if(nextindex > currentindex){
+							for (var i = 0; i < nextindex - currentindex; i++) {		 
+								 var firstItem = $(".v-cont li").first();
+								 $(".v-cont ul").append(firstItem); 		
+							}
+							$(".v-cont ul").prepend(curr);
+							var offset = ($(".v-cont li").width())*-1;
+							if(animateEnd==1){
+								animateEnd=0;	
+								$(".v-cont").stop().animate({left:offset},"slow",function(){
+										$(".v-cont ul li").first().remove();
+										$(".v-cont").css("left","0px");
+										animateEnd=1;
+								}); 
+							} 
+					}else{
+							var curt = $(".v-cont li").last().clone();
+							for (var i = 0; i < currentindex - nextindex; i++) {
+								 var lastItem = $(".v-cont li").last();
+								 $(".v-cont ul").prepend(lastItem);
+							}
+							$(".v-cont ul").append(curt);
+							var offset = ($(".v-cont li").width())*-1;
+							$(".v-cont").css("left",offset);
+							  if(animateEnd==1){
+									animateEnd=0;	
+									$(".v-cont").stop().animate({left:"0px"},"slow",function(){
+										
+										$(".v-cont ul li").last().remove();
+										animateEnd=1;
+									  
+									}); 
+
+								} 
+						
+						}
+
+			});
+
+	 });
+
+
+    
+
+
+$(".nav-sel").mouseover(function(){
+	$(this).find(".nav-data-list").show();
+	$(this).addClass("nav-item-on");
+}).mouseout(function(){
+	$(this).find(".nav-data-list").hide();
+	$(this).removeClass("nav-item-on");
+});
+
+$(".nav-data-list").mouseover(function(){
+	$(this).show();
+	$(this).prev().addClass("nav-item-on");
+}).mouseout(function(){
+	$(this).hide();
+	$(this).prev().removeClass("nav-item-on");
+});
+
+
+
+</script>
+
+<script id="nav_template" type="text/x-handlebars-template">
+{{#each nav_list}}
+
+<a href="{{nav_list_url}}" >{{nav_list_name}}</a>
+
+{{/each}}
+
+
+</script>
+
+<script id="banner_info_template" type="text/x-handlebars-template">
+
+{{#each banner}}
+<li index="0" onclick="window.location.href='{{url}}'">
+	
+	<div class="index-map-title">{{title}}</div>
+	<div class="index-map-subtitle"><p>{{subtitle}}</p></div>
+	<div class="index-map-info">
+		<div class="index-map-details inline">
+			<div class="index-map-detail">分享者：<span class="index-map-sharer">{{sharer}}</span></div>
+    		<div class="index-map-detail">时间：<span class="index-map-time">{{time}}</span></div>
+    		<div class="index-map-detail">地点：<span class="index-map-place">{{place}}</span></div>
+    		<div class="index-map-detail">人数：<span class="index-map-num">{{num}}</span>人</div>
+    		<div class="index-map-join">
+    			<a href="{{url}}" class="index-map-joinbtn">立即报名参加</a>
+    		</div>
+    	</div>
+    	<div class="index-map-leftnum inline"><span>{{leftnum}}</span>剩余名额</div>
+	</div>
+	
+</li>
+{{/each}}
+</script>
+
+<script id="share_rec_template" type="text/x-handlebars-template">
+{{#each share_rec}}
+<li class="share-column">
+	<a href="{{url}}">
+	<div class="column-title"><i></i><h3 class="text-ellipsis">{{sharer}}：{{title}}</h3><p>{{date}}</p></div>
+	<div class="column-subtitle">{{subtitle}}</div>
+	</a>
+</li>
+
+{{/each}}
+</script>
+<script id="share_rec_detail_template" type="text/x-handlebars-template">
+{{#each share_rec}}
+
+<div class="share-inner share-column-cont">
+	<div class="share-title">{{title}}</div>
+	<div class="share-subtitle">{{subtitle}}</div>
+	<div class="fsize">
+		<div class="index-map-join inline wid50 verbottom">
+			<a href="#nogo" class="index-map-joinbtn">立即报名参加</a>
+		</div>
+		<div class="wid50 inline">
+			<div class="share-info verbottom fsize">
+				<p class="inline wid35">分享者：{{sharer}}</p>
+				<p class="inline">时间：{{time}}</p>
+				<p class="inline wid35">人数：{{num}}人</p>
+				<p class="inline">地点：{{place}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{/each}}
+</script>
+<script id="theme_rec_template" type="text/x-handlebars-template">
+{{#each theme_rec}}
+<li class="inline hot-rec-item">
+	<a href="{{url}}">
+	<div class="rec-list rec-l{{no}} ">
+		<div class="mid-pic"></div>
+		<div class="show-txt">
+			<h5 class="text-ellipsis">{{title}}</h5>
+			<p>{{cont}}</p>
+		</div>
+	</div>
+	</a>
+</li>
+{{/each}}
+</script>
+
+
+<script id="kind_rec_template" type="text/x-handlebars-template">
+{{#each kind_rec}}
+<li class="inline">
+	<div class="index-rec-inner">
+		<div class="rec-list-title rec-list-title{{no}}"><i class="inline"></i><span>{{kind}}</span></div>
+		<dl class="rec-list-items">
+			{{#each data}}
+			<dd><a href="{{k_url}}">{{k_title}}</a></dd>
+			{{/each}}
+		</dl>
+	</div>
+</li>
+{{/each}}
+</script>
+
+<script id="review_template" type="text/x-handlebars-template">
+{{#each review}}
+<li class="index-review-items  index-review-item  inline">
+	<div class="review-inner">
+		<div class="l-pic l-pic{{no}} trs_animated"></div>
+		<div class="r-info trs_animated">
+			<div class="r-info-title text-ellipsis"><a href="{{url}}">{{title}}</a></div>
+			<div class="r-info-subtitle"><p>{{subtitle}}</p></div>
+			<dl class="r-info-dl">
+				{{#each data}}
+				<dd><a href="{{d_url}}">{{d_title}}</a></dd>	
+				{{/each}}
+			</dl>
+		</div>
+	</div>
+</li>
+{{/each}}
+</script>
+</body>
+
+</html>

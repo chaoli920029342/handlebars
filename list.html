@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>列表-内部分享</title>
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/handlebars.min.js"></script>
+<script type="text/javascript" src="js/json.js"></script>
+<script type="text/javascript" src="js/list_json.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/commonJSpadding.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("input,textarea").placeholder();
+	//$("input").focus();
+	var wid=$(window).width();
+	if(wid>640){
+
+	}else{
+		$(".search-pannel-sbg").click(function(){
+			$(".search-pannel").hide();
+			if($(".header-logo-menu").hasClass("menu_show")){
+				$(".header-logo-menu").removeClass("menu_show").addClass("menu_hide");
+			}
+			
+		})
+		$(".header-search-btn a").click(function(){	
+			$(".search-pannel").show();
+		});
+		$(".header-logo-pic").click(function(){
+			if($(".header-logo-menu").hasClass("menu_show")){
+				$(".header-logo-menu").removeClass("menu_show").addClass("menu_hide");
+			}else{
+				$(".header-logo-menu").addClass("menu_show").removeClass("menu_hide");
+			}
+			
+		});
+		$(".nav-data-listin a").click(function(){
+			$(".header-logo-menu").removeClass("menu_show").addClass("menu_hide");
+		})
+
+	}
+})
+</script>
+<style type="text/css">
+.pagePack{display:block;}
+.li-a{display:block;}
+@media screen and (max-width:640px){
+	.header{border-bottom:1px solid #ddd;}
+	.index-map{display:none;}
+	.list-main .list-share{padding-top:0;}
+	.list-main .list-share-cont .list-cont-ul li{width:100%;padding-bottom:10px;}
+	.list-main .list-share-cont .list-cont-pic{width:100px;height:56px;margin-top:5px;}
+	.list-main .list-share-cont .list-cont-bg{text-align:left;}
+	.list-main .list-share-cont .list-info-title{width:100%;font-size:18px;}
+	.list-main .list-share-cont .list-info-subtitle{padding-top:2px;}
+	.list-main .list-share-cont .list-info-subtitle p{width:100%;font-size:12px;height:20px;}
+	.list-main .list-share-cont .list-info-details{width:100%;padding-top:2px;}
+	.list-main .list-share-cont .list-cont-info{width:65%;padding-left:15px;}
+	.list-main .list-share-cont .list-info-details .d2,.list-main .list-share-cont .list-info-details .d5{display:none;}
+	.list-main .list-share-cont .list-info-details .l span{padding-right:0;margin-right:10px;max-width:50px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:inline-block;}
+	.list-main .list-share-cont .list-info-details .r{display:none;}
+	.list-main .list-share-cont .list-cont-inner{height:auto;}
+	.list-share .inner{background-color:#eee;}
+	.pagePack{display:none;}
+
+}
+
+@media screen and (max-width:320px){
+	.list-main .list-share-cont .list-cont-pic{width:70px;height:40px;margin-top:7px;}
+	.list-main .list-share-cont .list-info-details .l span{width:30px;}
+}
+
+</style>
+</head>
+<body>
+<div class="list-main">
+	<div class="header">
+		<div class="inner">
+			<div class="header-l">
+				<div class="header-logo inline">
+					<div class="header-logo-pic"></div>
+					<div class="header-logo-menu trs_animated">
+						<div class="nav-data-listin">
+							
+						</div>
+						<div class="search-pannel-sbg"></div>
+					</div>
+				</div>
+				<div class="header-title inline">技术分享平台</div>
+				<div class="header-subtitle inline"><span>共享</span><span>创新</span><span>体验</span></div>
+			</div>
+			<div class="header-m  inline trs_animated">分享列表</div>
+			<div class="header-r">
+				<div class="header-search-bg inline"><input type="text" class="header-search-inp " placeholder="请输入您想搜索的内容"  /></div>
+				<div class="header-search-btn inline"><a href="#nogo">搜索</a></div>
+			</div>
+			<div class="search-pannel trs_animated"><input placeholder="数据处理" /><div class="search-pannel-sbg"></div></div>
+		</div>
+	</div>
+	<div class="nav">
+		<div class="inner">
+			<div class="nav-data nav-item-on">
+				<a href="#nogo" class="nav-item">云端大数据<i class="inline"></i></a>
+				<div class="nav-data-list" style="display:block;">
+					<div class="nav-data-listin">
+						
+					</div>
+				</div>
+			</div>
+			<div class="nav-items">
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item1 nav-sel">首页</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类1</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类2</a></div>
+				<div class="inline nav-sel"><a href="#nogo" class="nav-item nav-item2 nav-sel">分类3</a></div>
+				<div class="inline nav-sel">
+					<a href="#nogo" class="nav-item nav-item2">分类4<i class="inline arrow"></i></a>
+					<div class="nav-data-list">
+						<div class="nav-data-listin"><!--nav-list-->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="index-map">
+		<div class="inner">
+			 <div class="index-map-fullSlide">
+			    <div class="index-map1 v-show" >
+			    	<div class="v-cont">
+				        <ul class="index-map-list">
+				                <li index="0" style="background:url(images/bannerbg2.jpg)">
+				                	<div class="index-map-title">基于用户视角的网站质量访问监测平台</div>
+				                	
+				                </li>
+				                <!--<li index="1" style="background:url(images/bannerbg1.jpg)">
+				                	<a href="#" target="_blank" ></a>
+				                </li >
+				                <li index="2" style="background:url(images/bannerbg1.jpg)">
+				                	<a href="#" target="_blank" ></a>
+				                </li>        -->
+				        </ul>
+			        </div>
+			       
+			    </div>
+			</div>
+		</div>
+		<div class="map-hint">
+			<div class="inner">
+				<div class="map-hint-cont"><i class="inline"></i><span>近期会邀请数据组的同学为大家分享数据库性能的管理和监控</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="list-share">
+		<div class="inner">
+			<div class="list-share-title">分享列表</div>
+			<div class="list-share-cont">
+				<ul class="list-cont-ul">
+					
+					
+				</ul>
+				<div class="pagePack" id="paginationContainer" >
+   <ul class="pagination" id="pagination"><li class="first disabled" jp-role="first" jp-data="1"><a href="javascript:;">首页</a></li><li class="prev disabled" jp-role="prev" jp-data="0"><a href="javascript:;">上一页</a></li><li class="page active" jp-role="page" jp-data="1"><a href="javascript:;">1</a></li><li class="page" jp-role="page" jp-data="2"><a href="javascript:;">2</a></li><li class="page" jp-role="page" jp-data="3"><a href="javascript:;">3</a></li><li class="page" jp-role="page" jp-data="4"><a href="javascript:;">4</a></li><li class="next" jp-role="next" jp-data="2"><a href="javascript:;">下一页</a></li><li class="last" jp-role="last" jp-data="4"><a href="javascript:;">末页</a></li></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-wapper">
+		<div class="footer">
+			<div class="inner">
+				<div class="l">
+					<div class="header-logo inline">
+						<div class="header-logo-pic"></div>
+					</div>
+					<div class="footer-col1 inline">
+						<h5>技术分享平台</h5>
+						<p>分享<span>创新</span>体验</p>
+					</div>
+					<div class="footer-col2 inline">
+						<div class="footer-line"></div>
+					</div>
+					<div class="footer-col3 inline">
+						益盟技术部产品开发组技术支持<br />
+						反馈电话：6195-7492<br />
+						电子信箱：emtechshare@emoney.cn<br />
+						公众号：emtechshare<br />
+					</div>
+				</div>
+				<div class="r">
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper">
+							<div class="footer-code"></div>
+							<p>凹凸理财公众号</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+					<div class="footer-col4 inline">
+						<div class="footer-codewapper inline">
+							<div class="footer-code"></div>
+							<p>系统监控地址</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script id="nav_template" type="text/x-handlebars-template">
+{{#each nav_list}}
+
+<a href="{{nav_list_url}}" >{{nav_list_name}}</a>
+
+
+{{/each}}
+
+
+</script>
+
+<script id="share_list_template" type="text/x-handlebars-template">
+{{#each share_list}}
+
+<li><a href="{{url}}" class="li-a">
+	<div class="list-cont-inner">
+		<div class="list-cont-bg">
+			<div class="list-cont-pic inline"><img src="{{img_url}}"></div>
+			<div class="list-cont-info inline">
+				<div class="list-info-title text-ellipsis">{{title}}</div>
+				<div class="list-info-subtitle"><p>{{subtitle}}</p></div>
+				<div class="list-info-details">
+					<div class="l">
+						<div class="d1 inline"><i class="i1"></i><span>{{name}}</span></div>
+						<div class="d2 inline"><i class="i2"></i><span>{{time}}</span></div>
+						<div class="d3 inline"><i class="i3"></i><span>{{download}}次</span></div>
+						<div class="d4 inline"><i class="i4"></i><span>{{zan}}赞</span></div>
+					</div>
+					<div class="r">
+						<div class="d5 inline"><i class="i1"></i><span>在线查看</span></div>
+						<div class="d6 inline"><i class="i2"></i><span>演示文档</span></div>
+						<div class="d7 inline"><i class="i3"></i><span>下载文档</span></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div></a>
+</li>
+
+{{/each}}
+</script>
+
+</body>
+</html>
